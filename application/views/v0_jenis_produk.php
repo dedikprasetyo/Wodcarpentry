@@ -184,7 +184,7 @@
                         </div>
                         <div class="form-group">
                             <label>Deskripsi jenis Produk</label>
-                            <textarea type="text" name="deskJenisProdukEdit" id="deskJenisProdukEdit" class="form-control" rows="5" maxlength="1000" required></textarea>
+                            <textarea type="text" name="deskJenisProdukEdit" id="deskJenisProdukEdit" class="form-control" rows="5" maxlength="1000"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

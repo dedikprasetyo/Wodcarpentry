@@ -26,7 +26,12 @@ class c0_jenis_produk extends CI_Controller {
 		$this->load->model("m0_jenis_produk");
 		$idJenisProduk = $this->input->post('idJenisProdukEdit');
 		$jenisProduk = $this->input->post('jenisProdukEdit');		
-		$deskJenisProduk = $this->input->post('deskJenisProdukEdit');		
+		$deskJenisProduk = $this->input->post('deskJenisProdukEdit');
+		if (empty($deskJenisProduk)) {
+			$deskJenisProduk = "-";
+		} else {
+			$deskJenisProduk = $this->input->post('deskJenisProdukEdit');
+		}		
 		// echo "ID Jenis Produk = ".$idJenisProduk."<br>"
 		// 	."Jenis Produk = ".$jenisProduk."<br>"
 		// 	."Deskripsi Jenis Produk = ".$deskJenisProduk."<br>";

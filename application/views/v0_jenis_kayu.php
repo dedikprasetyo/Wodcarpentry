@@ -261,7 +261,7 @@
                         </div>
                         <div class="form-group">
                             <label>Deskripsi jenis Kayu</label>
-                            <textarea type="text" name="deskripsiKayuEdit" id="deskripsiKayuEdit" class="form-control" rows="5" maxlength="1000" required></textarea>
+                            <textarea type="text" name="deskripsiKayuEdit" id="deskripsiKayuEdit" class="form-control" rows="5" maxlength="1000"></textarea>
                         </div>
                         <div class="form-group" style="padding-bottom: 0px">
                             <label>Upload</label>

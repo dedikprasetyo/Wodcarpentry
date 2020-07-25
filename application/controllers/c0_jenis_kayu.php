@@ -34,10 +34,15 @@ class c0_jenis_kayu extends CI_Controller {
 		$this->load->model("m0_jenis_kayu");
 		$idJenisKayu = $this->input->post('idJenisKayuEdit');
 		$jenisKayu = $this->input->post('jenisKayuEdit');		
-		$deskripsiKayu = $this->input->post('deskripsiKayuEdit');		
+		$deskJenisKayu = $this->input->post('deskripsiKayuEdit');	
+		if (empty($deskJenisKayu)) {
+			$deskJenisKayu = "-";
+		} else {
+			$deskJenisKayu = $this->input->post('deskripsiKayuEdit');
+		}	
 		// echo "ID Jenis Kayu = ".$idJenisKayu."<br>"
 		// 	."Jenis Kayu = ".$jenisKayu."<br>"
-		// 	."Deskripsi Jenis Kayu = ".$deskripsiKayu."<br>";
+		// 	."Deskripsi Jenis Kayu = ".$deskJenisKayu."<br>";
 		$targetpathJKayu = "images/JenisKayu/";	
 		$dataJKayu = $this->m0_jenis_kayu->get_jenis_kayu_byId($idJenisKayu);
 		if (!empty($_FILES['gambarJenisKayuEdit']['name'])) {	
@@ -45,15 +50,15 @@ class c0_jenis_kayu extends CI_Controller {
 				unlink($targetpathJKayu.$dataJKayu[0]->gambar_jkayu);
 				$targetpathJKayuGambar = $targetpathJKayu.basename($_FILES['gambarJenisKayuEdit']['name']);
 				move_uploaded_file($_FILES['gambarJenisKayuEdit']['tmp_name'],$targetpathJKayuGambar);
-				$this->m0_jenis_kayu->edit_jenis_kayu_withimg($idJenisKayu, $jenisKayu, $deskripsiKayu, $_FILES['gambarJenisKayuEdit']['name']);
+				$this->m0_jenis_kayu->edit_jenis_kayu_withimg($idJenisKayu, $jenisKayu, $deskJenisKayu, $_FILES['gambarJenisKayuEdit']['name']);
 			} else { //apabila gambarnya bernama no_image.jpg
 				//gambar tidak di unlink (dihapus) melainkan hnya ditambah
 				$targetpathJKayuGambar = $targetpathJKayu.basename($_FILES['gambarJenisKayuEdit']['name']);
 				move_uploaded_file($_FILES['gambarJenisKayuEdit']['tmp_name'],$targetpathJKayuGambar);
-				$this->m0_jenis_kayu->edit_jenis_kayu_withimg($idJenisKayu, $jenisKayu, $deskripsiKayu, $_FILES['gambarJenisKayuEdit']['name']);
+				$this->m0_jenis_kayu->edit_jenis_kayu_withimg($idJenisKayu, $jenisKayu, $deskJenisKayu, $_FILES['gambarJenisKayuEdit']['name']);
 			}
 		} else { 
-			$this->m0_jenis_kayu->edit_jenis_kayu_noimg($idJenisKayu, $jenisKayu, $deskripsiKayu);	
+			$this->m0_jenis_kayu->edit_jenis_kayu_noimg($idJenisKayu, $jenisKayu, $deskJenisKayu);	
 		}	
 		redirect(base_url('c0_jenis_kayu'));  //required
 	}
