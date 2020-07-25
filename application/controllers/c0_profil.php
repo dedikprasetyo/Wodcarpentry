@@ -15,20 +15,15 @@ class c0_profil extends CI_Controller {
 		$sejarah = $this->input->post('sejarahEdit');		
 		$moto = $this->input->post('motoEdit');
 		$alamat = $this->input->post('alamatEdit');		
-		$logo = $this->input->post('logoEdit');		//gk efek
 
 		// echo "ID Profil = ".$idProfil."<br>"
 		// 	."Nama Usaha = ".$namaUsaha."<br>"
 		// 	."Sejarah = ".$sejarah."<br>"
 		// 	."Moto = ".$moto."<br>"
-		// 	."Alamat = ".$alamat."<br>"
-		// 	."Nama Logo = ".$logo."<br>";  //gk efek
-
-
+		// 	."Alamat = ".$alamat."<br>";  
 
 		$targetpathLogo = "images/";	
 		$dataprofil = $this->m0_profil->get_profil_byId($idProfil);
-
 		if (!empty($_FILES['logoEdit']['name'])) {		
 		 	unlink($targetpathLogo.$dataprofil[0]->logo);
 			$targetpathLogoGambar = $targetpathLogo.basename($_FILES['logoEdit']['name']);
@@ -39,8 +34,6 @@ class c0_profil extends CI_Controller {
 		} else { 
 			$this->m0_profil->edit_profil_noimg($idProfil, $namaUsaha, $sejarah, $moto, $alamat);	
 		}	
-
 		redirect(base_url('c0_profil'));  //required
-
 	}
 }

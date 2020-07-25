@@ -107,13 +107,13 @@
 
                                                 $jenis_produk_cut = $row2['jenis_produk']; 
                                                 if (strlen($row2['jenis_produk']) != 0 && strlen($row2['jenis_produk']) > 20) {
-                                                    $jenis_produk_cut = substr($row2['jenis_produk'], 0, 21).' ...'; 
+                                                    $jenis_produk_cut = substr($row2['jenis_produk'], 0, 20).' ...'; 
                                                 }
 
 
                                                 $deskripsi_cut = $row2['deskripsi_produk']; 
                                                 if (strlen($row2['deskripsi_produk']) != 0 && strlen($row2['deskripsi_produk']) > 100) {
-                                                    $deskripsi_cut = substr($row2['deskripsi_produk'], 0, 101  ).' ...'; 
+                                                    $deskripsi_cut = substr($row2['deskripsi_produk'], 0, 100  ).' ...'; 
                                                 }                     
                                         ?>
                                         <tr>

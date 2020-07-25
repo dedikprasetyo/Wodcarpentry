@@ -100,6 +100,8 @@
                                             <th>Harga Awal</th>
                                             <th>Harga Diskon</th>
                                             <th>Gambar</th>
+                                            <th>Jenis Produk</th>
+                                            <th>Jenis Kayu</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -108,16 +110,16 @@
                                             $no = 1;                                          
                                             foreach ($dataProduk as $row2) {   
                                                 $nama_cut = $row2['nama_produk']; 
-                                                if (strlen($row2['nama_produk']) != 0 && strlen($row2['nama_produk']) > 25) {
-                                                    $nama_cut = substr($row2['nama_produk'], 0, 25).' ...'; 
+                                                if (strlen($row2['nama_produk']) != 0 && strlen($row2['nama_produk']) > 15) {
+                                                    $nama_cut = substr($row2['nama_produk'], 0, 15).' ...'; 
                                                 }
                                                 $deskripsi_cut = $row2['deskripsi_data_produk']; 
-                                                if (strlen($row2['deskripsi_data_produk']) != 0 && strlen($row2['deskripsi_data_produk']) > 20) {
-                                                    $deskripsi_cut = substr($row2['deskripsi_data_produk'], 0, 20).' ...'; 
+                                                if (strlen($row2['deskripsi_data_produk']) != 0 && strlen($row2['deskripsi_data_produk']) > 15) {
+                                                    $deskripsi_cut = substr($row2['deskripsi_data_produk'], 0, 15).' ...'; 
                                                 }
                                                 $gambar_cut = $row2['gambar_produk']; 
-                                                if (strlen($row2['gambar_produk']) != 0 && strlen($row2['gambar_produk']) > 20) {
-                                                    $gambar_cut = substr($row2['gambar_produk'], 0, 20).' ...'; 
+                                                if (strlen($row2['gambar_produk']) != 0 && strlen($row2['gambar_produk']) > 10) {
+                                                    $gambar_cut = substr($row2['gambar_produk'], 0, 10).' ...'; 
                                                 }                     
                                         ?>
                                         <tr>
@@ -127,6 +129,8 @@
                                             <td><?php echo $row2['harga_awal']; ?></td>
                                             <td><?php echo $row2['harga_akhir']; ?></td>
                                             <td><?php echo $gambar_cut; ?></td>
+                                            <td>JProduk</td>
+                                            <td>JKayu</td>
                                             <td>
                                                 <a href="#" class="ubah" onclick=""><i class="fa fa-pencil-square-o" data-toggle="tooltip" title="Ubah" aria-hidden="true"></i></a>
                                                 <a href="" class="delete" data-toggle="modal" onclick=""><i class="fa fa-trash-o" data-toggle="tooltip" title="Hapus" aria-hidden="true"></i></a>
