@@ -32,7 +32,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="<?php echo base_url('c0_profil')?>">
-                    <img src="<?php echo base_url() ?>images/<?php echo $row['logo']; ?>" height="25" width="25" alt="Logo">
+                    <img src="<?php echo base_url()?>images/<?php echo $row['logo']; ?>" height="25" width="25" alt="Logo">
                 </a>
             </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -212,7 +212,7 @@
                         </div>
                         <div class="form-group">
                             <label>Deskripsi Jenis Kayu</label>
-                            <textarea type="text" class="form-control" id="deskJenisKayu"  name="deskJenisKayu" rows="3" maxlength="1000"></textarea>
+                            <textarea type="text" class="form-control" id="deskJenisKayu"  name="deskJenisKayu" rows="5" maxlength="1000"></textarea>
                         </div>
                         <div class="form-group" style="padding-bottom: 0px">
                             <label>Upload</label>
@@ -289,7 +289,6 @@
                         <input type="submit" class="btn btn-primary" value="Simpan">
                     </div>
                 </form>
-                
             </div>
         </div>
     </div>
