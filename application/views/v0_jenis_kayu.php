@@ -66,7 +66,6 @@
                     <div class="header-left" style="padding: 9px 0;">
                         <h5>Jenis Kayu</h5>
                     </div>
-                    
                 </div>
                 <div class="col-sm-6">
                     <div class="header-left" style="padding: 9px 0;  float: right;" >
@@ -100,8 +99,8 @@
                                                     $jenis_kayu_cut = substr($row2['jenis_kayu'], 0, 20).' ...'; 
                                                 }
                                                 $deskripsi_cut = $row2['deskripsi_kayu']; 
-                                                if (strlen($row2['deskripsi_kayu']) != 0 && strlen($row2['deskripsi_kayu']) > 75) {
-                                                    $deskripsi_cut = substr($row2['deskripsi_kayu'], 0, 75).' ...'; 
+                                                if (strlen($row2['deskripsi_kayu']) != 0 && strlen($row2['deskripsi_kayu']) > 70) {
+                                                    $deskripsi_cut = substr($row2['deskripsi_kayu'], 0, 70).' ...'; 
                                                 }    
                                                 $gambar_cut = $row2['gambar_jkayu'];   
                                                 if (strlen($row2['gambar_jkayu']) != 0 && strlen($row2['gambar_jkayu']) > 20) {

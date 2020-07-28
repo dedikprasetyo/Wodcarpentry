@@ -36,5 +36,3 @@ jQuery(document).ready(function($) {
 
 
 });
-
-

@@ -1,45 +1,33 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <?php 
     foreach($profil as $row) {
     // echo "$value->nama_usaha";
     }
 ?> 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Halaman Admin - Profil</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="<?php echo base_url() ?>apple-icon.png">
+    <link rel="apple-touch-icon" href="<?php echo base_url()?>apple-icon.png">
     <link rel="shortcut icon" href="<?php echo base_url()?>images/<?php echo $row['logo']; ?>">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/bootstrap/dist/css/bootstrap.min.css">
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"rel="stylesheet"id="bootstrap-css">
 
-
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>vendors/jqvmap/dist/jqvmap.min.css">
-
-
-
-
-
-
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
-
-
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-
 </head>
-
 <body>
-    <!-- Left Panel -->
+    <!-- left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div class="navbar-header">
@@ -66,14 +54,13 @@
                         <a href="<?php echo base_url('c0_data_produk');?>"> <i class="menu-icon fa fa-table"></i>Data Produk </a>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
-    </aside><!-- /#left-panel -->
-    <!-- Left Panel -->
+    </aside>
+    <!-- /left-panel -->
 
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-        
         <!-- Header-->
         <header id="header" class="header">
             <div class="header-menu">
@@ -86,7 +73,6 @@
             </div>
         </header>
         <!-- /header -->
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -98,10 +84,10 @@
                                         <?php echo $row['nama_usaha']; ?>
                                     </h5><br>
                                     <img class="rounded-circle mx-auto d-block" src="<?php echo base_url()?>images/<?php echo $row['logo']; ?>" height="250" width="250" alt="Card image cap"><br>
-                                    <div class="text-sm-center"><?php echo $row['sejarah']; ?></div>
-                                    <div class="text-sm-center"><?php echo $row['moto']; ?></div>
-                                    <div class="text-sm-center">
-                                        <i class="fa fa-map-marker"></i> <?php echo $row['alamat']; ?>
+                                    <div class="text-sm-center">Sejarah : <?php echo $row['sejarah']; ?></div>
+                                    <div class="text-sm-center">Moto : <?php echo $row['moto']; ?></div>
+                                    <div class="text-sm-center">Alamat :
+                                        <i class="fa fa-map-marker"> </i> <?php echo $row['alamat']; ?>
                                     </div>
                                 </div>
                                 <hr>
@@ -120,10 +106,10 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- .row -->
-            </div><!-- .animated -->
-        </div><!-- .content -->
-    </div><!-- /#right-panel -->
+                </div>
+            </div>
+        </div>
+    </div><!-- /right-panel -->
 
     <!-- Edit Modal HTML Profil-->
     <div id="tomboledittt" class="modal fade" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
@@ -187,79 +173,37 @@
             </div>
         </div>
     </div>
-
     <script>
         function modal_edit_profil(idProfilE,namaUsahaE,logoE,sejarahE,motoE,alamatE)
         {
-            $('#tomboledittt').modal('show', {backdrop: 'false'});      //tidak bisa     
+            $('#tomboledittt').modal('show', {backdrop: 'false'});   
             document.getElementById('idProfilEdit').value = idProfilE;
             document.getElementById('namaUsahaEdit').value = namaUsahaE;  
             document.getElementById('sejarahEdit').value = sejarahE;   
             document.getElementById('motoEdit').value = motoE;   
             document.getElementById('alamatEdit').value = alamatE; 
-            document.getElementById('logoEditImg').value = logoE;   
-            // alert(idProfilE);
-
+            document.getElementById('logoEditImg').value = logoE; 
         }
     </script>
 
-      
-
-
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="<?php echo base_url() ?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/script.js"></script>
+    <script src="<?php echo base_url()?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-    <!-- Right Panel -->
-    <script src="<?php echo base_url() ?>vendors/jquery/dist/jquery.min.js"></script>
-    <script src="<?php echo base_url() ?>vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/main.js"></script>
-
-    <script src="<?php echo base_url() ?>vendors/chart.js/dist/Chart.bundle.min.js"></script>
-
-    
-    <script src="<?php echo base_url() ?>assets/js/dashboard.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/widgets.js"></script>
-    <script src="<?php echo base_url() ?>vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-    <script src="<?php echo base_url() ?>vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="<?php echo base_url() ?>vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-
-
-    <script>
-        (function($) {
-            "use strict";
-
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
-            });
-        })(jQuery);
-    </script>
+    <script src="<?php echo base_url()?>vendors/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/main.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/jszip/dist/jszip.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?php echo base_url()?>vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/init-scripts/data-table/datatables-init.js"></script>
 </body>
-</html>
-
-
-
-<!-- 
-
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
-
-
-
-
-    <script src="<?php echo base_url();?>/assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>/assets/js/script.js"></script> -->
-
-   
+</html>  
